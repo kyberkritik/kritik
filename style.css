@@ -4,6 +4,15 @@ body {
   
   p {
     color: chartreuse;
-    margin-left: 20px;
-    font-size: 30px;
+    margin-left: 0px;
+    font-size: 24px;
+    margin-bottom: -50px;
+    margin-top: 0px;
+  }
+
+  h6 {
+    color: rgb(0, 247, 255);
+    margin-left: 30px;
+    font-size: 24px;
+    font-style: italic;
   }
