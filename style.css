@@ -33,6 +33,7 @@ body {
     color: var(--neon-magenta);
     text-shadow: 0 0 15px var(--neon-magenta);
     animation: pulseGlow 3s infinite alternate;
+		margin-top: 5px; /* Reduce space above this paragraph */
 }
 
 /* Cyberpunk Moving Effect */
@@ -42,6 +43,7 @@ body {
     text-shadow: var(--neon-shadow);
     display: inline-block;
     animation: smoothMove 5s infinite alternate ease-in-out;
+		margin-bottom: 10px; /* Reduce space below this paragraph */
 }
 
 /* Image Container */
