@@ -1,72 +1,91 @@
-/* Smooth text color animation */
-@keyframes colorCycle {
-    0% { color: #ff0000; }
-    33% { color: #00ff00; }
-    66% { color: #0000ff; }
-    100% { color: #ff0000; }
+/* Cyberpunk Color Palette */
+:root {
+    --neon-blue: #00eaff;
+    --neon-magenta: #ff00ff;
+    --neon-cyan: #00ffff;
+    --dark-bg: #0a0a0a;
+    --neon-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-magenta);
 }
 
-.color-change {
-    animation: colorCycle 5s infinite;
+/* General Page Style */
+body {
+    background-color: var(--dark-bg);
+    color: var(--neon-cyan);
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    padding: 20px;
 }
 
-/* Hover effect for images */
-.image-hover {
+/* Cyberpunk Text Styling */
+.cyber-text {
+    font-size: 24px;
+    line-height: 1.6;
+    color: var(--neon-blue);
+    text-shadow: var(--neon-shadow);
+    animation: glowText 3s infinite alternate;
+}
+
+/* Cyberpunk Header Styling */
+.cyber-glow {
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--neon-magenta);
+    text-shadow: 0 0 15px var(--neon-magenta);
+    animation: pulseGlow 3s infinite alternate;
+}
+
+/* Cyberpunk Moving Effect */
+.cyber-move {
+    font-size: 22px;
+    color: var(--neon-cyan);
+    text-shadow: var(--neon-shadow);
+    display: inline-block;
+    animation: smoothMove 5s infinite alternate ease-in-out;
+}
+
+/* Image Container */
+.image-container {
+    margin: 20px auto;
+}
+
+/* Cyberpunk Image Styling */
+.cyber-image {
+    width: 80%;
+    max-width: 400px;
+    border: 3px solid var(--neon-magenta);
+    box-shadow: 0 0 20px var(--neon-magenta);
     transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out;
 }
 
-.image-hover:hover {
+.cyber-image:hover {
     transform: scale(1.1);
-    filter: brightness(1.3);
+    filter: brightness(1.5);
 }
 
-/* Fade-in effect */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Animations */
+@keyframes glowText {
+    0% { text-shadow: 0 0 5px var(--neon-blue); }
+    100% { text-shadow: 0 0 15px var(--neon-cyan); }
 }
 
-.fade-in {
-    animation: fadeIn 2s ease-in-out;
+@keyframes pulseGlow {
+    0% { text-shadow: 0 0 10px var(--neon-magenta); }
+    100% { text-shadow: 0 0 20px var(--neon-magenta); }
 }
 
-/* Moving text effect */
-@keyframes moveText {
-    0% { transform: translateX(-10px); }
-    50% { transform: translateX(10px); }
-    100% { transform: translateX(-10px); }
-}
-
-.move-text {
-    display: inline-block;
-    animation: moveText 3s infinite ease-in-out;
-}
-
-/* Pulsating effect */
-@keyframes pulse {
-    0% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.05); opacity: 0.8; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-.pulse {
-    animation: pulse 2s infinite;
-}
-
-/* Glowing text effect */
-@keyframes glow {
-    0% { text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000; }
-    50% { text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; }
-    100% { text-shadow: 0 0 5px #0000ff, 0 0 10px #0000ff; }
-}
-
-.glow {
-    animation: glow 2s infinite;
+@keyframes smoothMove {
+    0% { transform: translateX(-5px); }
+    100% { transform: translateX(5px); }
 }
 
 /* Responsive Design */
 @media screen and (max-width: 600px) {
-    .image-hover {
-        width: 90%;
+    .cyber-text, .cyber-glow, .cyber-move {
+        font-size: 20px;
+    }
+
+    .cyber-image {
+        width: 95%;
     }
 }
